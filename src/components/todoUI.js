@@ -4,7 +4,7 @@ const TodoUi = (props) => {
     const todoList = props.todoArray.length ? (
         props.todoArray.map( element => { 
             return (
-            <div className = "collection-item pos-relative" key = { element.id }>
+            <div className = "collection-item pos-relative content-font-size" key = { element.id }>
                 <span>{ element.content }</span><div class="cross" onClick = { () => props.deleteTodo(element.id) }></div>
             </div> )})
     ) : (

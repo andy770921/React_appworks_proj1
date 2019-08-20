@@ -1,8 +1,6 @@
 import React from "react";
 
 const TodoUi = (props) => {
-    // console.log(props);
-    // console.log(props.deleteTodo);
     const todoList = props.todoArray.length ? (
         props.todoArray.map( element => { 
             return (

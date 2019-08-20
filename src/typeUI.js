@@ -4,8 +4,10 @@ class TypeUi extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addNewTodo(document.querySelector("#content-text").value);
-        //document.querySelector("#content-text").value = "";
+        if (document.querySelector("#content-text").value !== "") {
+            this.props.addNewTodo(document.querySelector("#content-text").value);
+            //document.querySelector("#content-text").value = "";
+        }
     }
 
     render(){

@@ -5,7 +5,8 @@ const TodoUi = (props) => {
         props.todoArray.map( element => { 
             return (
             <div className = "collection-item pos-relative content-font-size" key = { element.id }>
-                <span>{ element.content }</span><div class="cross" onClick = { () => props.deleteTodo(element.id) }></div>
+                <span>{ element.content }</span>
+                { (props.page === "all") ? (<div class="cross" onClick = { () => props.deleteTodo(element.id) }></div>) : ( null ) }
             </div> )})
     ) : (
         <p className = "center"> You have no todo's left </p>

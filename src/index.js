@@ -12,7 +12,8 @@ class App extends React.Component {
     state = {
         todos: [
             { content: "Buy some milk", isFinished: false, id: 1 },
-            { content: "Play games", isFinished: false, id: 2 }
+            { content: "Play games", isFinished: false, id: 2 },
+            { content: "Sleep", isFinished: true, id: 3 }
         ]
     }
     handleAdd = (newTodoContent) => {
@@ -35,9 +36,9 @@ class App extends React.Component {
             <div className="app-content container">
                 <h1 className="blue-text center"> Todo's </h1>
                 <NavbarUi />
-                <Route exact path="/" component={props => <AllUi {...props} parentState={this.state} deleteNewTodo={this.handleDelete} />}/>
-                <Route path="/ongoing" component={OngoingUi} />
-                <Route path="/finished" component={FinishedUi} />
+                <Route exact path="/" component={props => <AllUi {...props} parentState={this.state} deleteNewTodo={this.handleDelete} />} />
+                <Route path="/ongoing" component={props => <OngoingUi {...props} parentState={this.state} />} />
+                <Route path="/finished" component={props => <FinishedUi {...props} parentState={this.state} />} />
                 <TypeUi addNewTodo={this.handleAdd} />
             </div>
             </BrowserRouter>

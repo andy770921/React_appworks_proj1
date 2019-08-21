@@ -7,6 +7,12 @@ import AllUi from "./components/allUI";
 import OngoingUi from "./components/onGoingUI";
 import FinishedUi from "./components/finishedUI";
 import TypeUi from "./components/typeUI";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./reducers/rootReducer";
+import { connect } from "react-redux";
+
+const store = createStore(rootReducer);
 
 class App extends React.Component {
     state = {
@@ -50,4 +56,4 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.querySelector("#root"));

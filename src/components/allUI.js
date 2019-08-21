@@ -1,39 +1,25 @@
 import React, { Component } from "react";
 
 import TodoUi from "./todoUI";
-import TypeUi from "./typeUI";
 
 class AllUi extends Component {
-    state = {
-        todos: [
-            { content: "Buy some milk", isFinished: false, id: 1 },
-            { content: "Play games", isFinished: false, id: 2 }
-        ]
-    }
+
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.todos);
+        // console.log(this.state.todos);
+        console.log(this.props.parentState.todos);
     }
-    handleDelete = (id) => {
-        let newTodos = this.state.todos.filter(element => { return element.id !== id });
-        this.setState({
-            todos: newTodos
-        });
+    handleDeletePassData = (id) => {
+        let newTodos = this.props.parentState.todos.filter(element => { return element.id !== id });
+        this.props.deleteNewTodo(newTodos);
     }
-    handleAdd = (newTodoContent) => {
-        const newObj =  { content: newTodoContent, isFinished: false, id: this.state.todos.length + 1 };
-        console.log(newObj);
-        let newTodos = [...this.state.todos, newObj];
-        this.setState({
-            todos: newTodos
-        });
-    }
+    
     render() {
         return (
             <div> 
                 <h4 className="center"> All Todo List </h4>
-                <TodoUi todoArray={this.state.todos} deleteTodo={this.handleDelete}/>
-                <TypeUi addNewTodo={this.handleAdd} />
+                <button onClick={this.handleSubmit}>click</button>
+                <TodoUi todoArray={this.props.parentState.todos} deleteTodo={this.handleDeletePassData}/>
             </div>
         )
     }

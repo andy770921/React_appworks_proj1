@@ -6,19 +6,39 @@ import NavbarUi from "./navbarUI";
 import AllUi from "./components/allUI";
 import OngoingUi from "./components/onGoingUI";
 import FinishedUi from "./components/finishedUI";
-
+import TypeUi from "./components/typeUI";
 
 class App extends React.Component {
+    state = {
+        todos: [
+            { content: "Buy some milk", isFinished: false, id: 1 },
+            { content: "Play games", isFinished: false, id: 2 }
+        ]
+    }
+    handleAdd = (newTodoContent) => {
+        const newObj =  { content: newTodoContent, isFinished: false, id: parseInt(Math.random()*1000000) };
+        // console.log(newObj);
+        let newTodos = [...this.state.todos, newObj];
+        this.setState({
+            todos: newTodos
+        });
+    }
+    handleDelete = (newTodoList) => {
+        // console.log(newTodoList);
+        this.setState({
+            todos: newTodoList
+        });
+    }
     render() {
         return (
             <BrowserRouter>
             <div className="app-content container">
                 <h1 className="blue-text center"> Todo's </h1>
                 <NavbarUi />
-                <Route exact path="/" component={AllUi}/>
+                <Route exact path="/" component={props => <AllUi {...props} parentState={this.state} deleteNewTodo={this.handleDelete} />}/>
                 <Route path="/ongoing" component={OngoingUi} />
                 <Route path="/finished" component={FinishedUi} />
-                
+                <TypeUi addNewTodo={this.handleAdd} />
             </div>
             </BrowserRouter>
         )

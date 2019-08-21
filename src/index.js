@@ -18,27 +18,31 @@ class App extends React.Component {
     }
     handleAdd = (newTodoContent) => {
         const newObj =  { content: newTodoContent, isFinished: false, id: parseInt(Math.random()*1000000) };
-        // console.log(newObj);
         let newTodos = [...this.state.todos, newObj];
         this.setState({
             todos: newTodos
         });
     }
     handleDelete = (newTodoList) => {
-        // console.log(newTodoList);
         this.setState({
             todos: newTodoList
         });
     }
+    handleConfirm = (newTodoList) => {
+        this.setState({
+            todos: newTodoList
+        });
+    }
+
     render() {
         return (
             <BrowserRouter>
             <div className="app-content container">
                 <h1 className="blue-text center"> Todo's </h1>
                 <NavbarUi />
-                <Route exact path="/" component={props => <AllUi {...props} parentState={this.state} deleteNewTodo={this.handleDelete} />} />
-                <Route path="/ongoing" component={props => <OngoingUi {...props} parentState={this.state} />} />
-                <Route path="/finished" component={props => <FinishedUi {...props} parentState={this.state} />} />
+                <Route exact path="/" component={props => <AllUi {...props} parentState={this.state} deleteNewTodo={this.handleDelete} confirmNewTodo={this.handleConfirm} />} />
+                <Route path="/ongoing" component={props => <OngoingUi {...props} parentState={this.state} deleteNewTodo={this.handleDelete} confirmNewTodo={this.handleConfirm} />} />
+                <Route path="/finished" component={props => <FinishedUi {...props} parentState={this.state} deleteNewTodo={this.handleDelete} />} />
                 <TypeUi addNewTodo={this.handleAdd} />
             </div>
             </BrowserRouter>

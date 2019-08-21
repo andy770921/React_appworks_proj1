@@ -30,8 +30,8 @@ class AllUi extends Component {
     }
     render() {
         return (
-            <div className="app-content container"> 
-                <h1 className="blue-text center"> Todo's </h1>
+            <div> 
+                <h4 className="center"> All Todo List </h4>
                 <TodoUi todoArray={this.state.todos} deleteTodo={this.handleDelete}/>
                 <TypeUi addNewTodo={this.handleAdd} />
             </div>

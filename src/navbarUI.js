@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavbarUi = () => {
     return (
         <nav className = "nav-wrapper blue lighten-3">
             <ul className = "flex-container-center">
-                <li><a className="black-text nav-font-size" href = "/dist/index.html">All</a></li>
-                <li><a className="black-text nav-font-size" href = "/ongoing">On Going</a></li>
-                <li><a className="black-text nav-font-size" href = "/finished">Finished</a></li>
+                <li><Link className="black-text nav-font-size" to= "/">All</Link></li>
+                <li><Link className="black-text nav-font-size" to= "/ongoing">On Going</Link></li>
+                <li><Link className="black-text nav-font-size" to= "/finished">Finished</Link></li>
             </ul>
         </nav>
     );

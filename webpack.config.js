@@ -1,10 +1,11 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',  
+  entry: { main: './src/index.js', gameEntry: './src/example.js'},  
   output: {
     path: path.resolve(__dirname, 'dist'), 
-    filename: 'main.js'
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -14,5 +15,20 @@ module.exports = {
   },
   devServer: {
     contentBase: "./dist",
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      title: "Todo's",
+      template: './src/template.html',
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'game.html',
+      title: 'Game Page Title',
+      template: './src/template.html',
+      chunks: ['gameEntry']
+    })
+  ]
+  
 };

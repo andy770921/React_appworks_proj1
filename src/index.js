@@ -14,26 +14,6 @@ import rootReducer from "./reducers/rootReducer";
 const store = createStore(rootReducer);
 
 class App extends React.Component {
-
-    // handleAdd = (newTodoContent) => {
-    //     const newObj =  { content: newTodoContent, isFinished: false, id: parseInt(Math.random()*1000000) };
-    //     let newTodos = [...this.state.todos, newObj];
-    //     this.setState({
-    //         todos: newTodos
-    //     });
-    // }
-    // handleDelete = (newTodoList) => {
-    //     this.setState({
-    //         todos: newTodoList
-    //     });
-    // }
-    // handleConfirm = (newTodoList) => {
-    //     this.setState({
-    //         todos: newTodoList
-    //     });
-    // }
-    // store.dispatch({ type: "DELETE_TODO", id : id });
-
     render() {
         return (
             <BrowserRouter>
@@ -43,7 +23,7 @@ class App extends React.Component {
                 <Route exact path="/" component={AllUi} />
                 <Route path="/ongoing" component={OngoingUi} />
                 <Route path="/finished" component={FinishedUi} />
-                <TypeUi addNewTodo={this.handleAdd} />
+                <TypeUi />
             </div>
             </BrowserRouter>
         )

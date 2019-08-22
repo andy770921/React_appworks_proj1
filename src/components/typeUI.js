@@ -1,16 +1,17 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class TypeUi extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
         if (document.querySelector("#content-text").value !== "") {
-            this.props.addNewTodo(document.querySelector("#content-text").value);
-            //document.querySelector("#content-text").value = "";
+            this.props.addTodoRedux(document.querySelector("#content-text").value);
+            document.querySelector("#content-text").value = "";
         }
     }
 
-    render(){
+    render() {
         return (
             <div>
                 <form onSubmit = { this.handleSubmit }>
@@ -22,4 +23,9 @@ class TypeUi extends Component {
         );
     }
 }
-export default TypeUi;
+
+const mapDispatchToProps = (dispatch) => {
+    return { addTodoRedux : newTodoContent => { dispatch({ type: "ADD_TODO", newTodoContent : newTodoContent })}};
+}
+
+export default connect(null, mapDispatchToProps)(TypeUi);

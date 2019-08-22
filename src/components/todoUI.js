@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 const TodoUi = (props) => {
+    
     const todoList = props.todoArray.length ? (
         props.todoArray.map( element => { 
             return (
@@ -19,7 +20,6 @@ const TodoUi = (props) => {
         </div>
     );
 }
-
 
 const mapDispatchToProps = (dispatch) => {
     return { deleteTodoRedux : id => { dispatch({ type: "DELETE_TODO", id : id })},

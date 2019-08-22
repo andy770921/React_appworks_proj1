@@ -3,21 +3,7 @@ import TodoUi from "./todoUI";
 import { connect } from "react-redux";
 
 const OngoingUi = (props) => {
-
-    // function handleDeletePassData (id) {
-    //     let newTodos = props.parentState.todos.filter(element => { return element.id !== id });
-    //     props.deleteNewTodo(newTodos);
-    // }
-    // function handleConfirmPassData (id) {
-    //     let newTodos = props.parentState.todos.map(element => {
-    //         if (element.id === id) {
-    //             element.isFinished = true;
-    //             return element;
-    //         } else { return element; }
-    //     });
-    //     props.confirmNewTodo(newTodos);
-    // }
-
+    
     const filteredTodos = props.todoArray.filter(element => { return element.isFinished === false });
     return (
         <div>

@@ -6,7 +6,7 @@ class TypeUi extends Component {
         e.preventDefault();
         if (document.querySelector("#content-text").value !== "") {
             this.props.addNewTodo(document.querySelector("#content-text").value);
-            //document.querySelector("#content-text").value = "";
+            document.querySelector("#content-text").value = "";
         }
     }
 

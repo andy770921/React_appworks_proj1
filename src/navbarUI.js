@@ -6,7 +6,7 @@ const NavbarUi = () => {
         <nav className = "nav-wrapper blue lighten-3">
             <ul className = "flex-container-center">
                 <li><Link className="black-text nav-font-size" to= "/">All</Link></li>
-                <li><Link className="black-text nav-font-size" to= "/ongoing">On Going</Link></li>
+                <li><Link className="black-text nav-font-size" to= "/ongoing">Ongoing</Link></li>
                 <li><Link className="black-text nav-font-size" to= "/finished">Finished</Link></li>
             </ul>
         </nav>

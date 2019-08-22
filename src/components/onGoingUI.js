@@ -7,7 +7,7 @@ const OngoingUi = (props) => {
     const filteredTodos = props.todoArray.filter(element => { return element.isFinished === false });
     return (
         <div>
-            <h4 className = "center">On Going Page</h4>
+            <h4 className = "center">Ongoing Todo's</h4>
             <TodoUi todoArray={filteredTodos}/>
         </div>
     );

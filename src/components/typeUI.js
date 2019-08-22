@@ -14,10 +14,10 @@ class TypeUi extends Component {
     render() {
         return (
             <div>
-                <form onSubmit = { this.handleSubmit }>
+                <form onSubmit = { this.handleSubmit } className="flex-container-column">
                     <label>Add New Todo:</label>
                     <input type = "text" id = "content-text" />
-                    <button className="btn waves-effect waves-ligh">submit</button>
+                    <button className="btn waves-effect waves-ligh flex-end">submit</button>
                 </form>
             </div>
         );

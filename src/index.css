@@ -52,8 +52,14 @@
   .flex-container-center li {
     display: inline-block;
     margin: 0px 15px;
-}
-
+  }
+  .flex-container-column {
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-end {
+    align-self: flex-end;
+  }
   /* ---- Font-size ---- */
 
   .nav-font-size {

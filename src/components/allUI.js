@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 const AllUi = (props) => {
     return (
         <div>
-            <h4 className="center"> All Todo List </h4>
+            <h4 className="center"> All Todo's </h4>
             <TodoUi todoArray={props.todoArray} />
         </div>
     )

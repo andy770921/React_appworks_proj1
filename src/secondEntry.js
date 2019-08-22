@@ -5,7 +5,7 @@ class Game extends Component {
     render() {
         return (
             <div className="app-content container">
-                <h1 className="blue-text center"> Example Page </h1>
+                <h1 className="blue-text center"> Game Page </h1>
             </div>
         )
     }

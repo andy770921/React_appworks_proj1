@@ -10,15 +10,18 @@ class TypeUi extends Component {
             document.querySelector("#content-text").value = "";
         }
     }
-
+    handleClick = () => {
+        location.href = 'game.html';
+    }
     render() {
         return (
             <div>
                 <form onSubmit = { this.handleSubmit } className="flex-container-column">
                     <label>Add New Todo:</label>
                     <input type = "text" id = "content-text" />
-                    <button className="btn waves-effect waves-ligh flex-end">submit</button>
+                    <button className="btn waves-effect waves-light flex-end">submit</button>
                 </form>
+                <button className="btn-large waves-effect waves-light chinese-font" onClick = { this.handleClick }>不想做事，我要玩遊戲</button>
             </div>
         );
     }

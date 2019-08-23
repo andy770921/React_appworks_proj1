@@ -1,12 +1,12 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class EnterNameUi extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
         if (document.querySelector("#name-text").value !== "") {
-            // this.props.addTodoRedux(document.querySelector("#name-text").value);
-            console.log(document.querySelector("#name-text").value);
+            this.props.addUserRedux(document.querySelector("#name-text").value);
             document.querySelector("#name-text").value = "";
         }
     }
@@ -23,4 +23,8 @@ class EnterNameUi extends Component {
     }
 }
 
-export default EnterNameUi;
+const mapDispatchToProps = (dispatch) => {
+    return { addUserRedux : newUser => { dispatch({ type: "ADD_USER", newUser : newUser })}};
+}
+
+export default connect(null, mapDispatchToProps)(EnterNameUi);

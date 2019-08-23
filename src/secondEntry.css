@@ -55,7 +55,7 @@
 
     /* ---- Board CSS Grid ---- */
     :root {
-      --gird-width: 40vw;
+      --gird-width: 500px;
       --rank-item-margin: 30px;
     }
 
@@ -132,3 +132,10 @@
     margin-top: 25px;
     margin-left: calc(50% - 130px/2);
   }
+
+  
+   /* ---- add Cursor ---- */
+
+   .add-cursor {
+     cursor: pointer;
+   }

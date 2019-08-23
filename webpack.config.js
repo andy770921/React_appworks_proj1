@@ -25,7 +25,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'game.html',
-      title: 'Game Page Title',
+      title: 'Game Page',
       template: './src/template.html',
       chunks: ['gameEntry']
     })

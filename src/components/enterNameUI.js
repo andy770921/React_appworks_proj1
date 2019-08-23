@@ -7,6 +7,7 @@ class EnterNameUi extends Component {
         e.preventDefault();
         if (document.querySelector("#name-text").value !== "") {
             this.props.addUserRedux(document.querySelector("#name-text").value);
+            alert(" 報名成功 ");
             document.querySelector("#name-text").value = "";
         }
     }

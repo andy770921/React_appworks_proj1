@@ -18,8 +18,8 @@ class SecondApp extends Component {
             <div className="app-content container">
                 <h1 className="blue-text center"> Puzzle Game </h1>
                 <SecondNavbarUi />
-                <Route path="/gameplay" component={PlayUi} />
-                <Route path="/gamerank" component={RankUi} />
+                <Route path="/play" component={PlayUi} />
+                <Route path="/ranking" component={RankUi} />
             </div>
             </BrowserRouter>
         )

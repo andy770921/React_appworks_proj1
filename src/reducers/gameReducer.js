@@ -1,3 +1,4 @@
+
 const initState = {
     block: [
         { position: "1x1", value: 1, id: 101 },
@@ -55,10 +56,8 @@ const gameReducer = (state = initState, action) => {
             }
             break;
         case "SHUFFLE":
-            const emptyValueArray = state.block.filter(element => (element.position === action.emptyPosition));
-            const emptyValue = emptyValueArray[0].value;
-            const targetValueArray = state.block.filter(element => (element.position === action.targetPosition));
-            const targetValue = targetValueArray[0].value;
+            const emptyValue = state.block.find(element => (element.position === action.emptyPosition)).value;
+            const targetValue = state.block.find(element => (element.position === action.targetPosition)).value;
             let copiedState = Object.assign({}, state);
             newBlockArray = copiedState.block.map(element => {
                 if (element.position === action.emptyPosition) {

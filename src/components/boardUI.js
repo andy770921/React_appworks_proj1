@@ -104,8 +104,8 @@ class BoardUi extends Component {
         }
         if (checkWin >= 8) { 
             this.props.addRankRedux();
-            alert ("You Win! Check your ranking..."); 
-            setTimeout(() => {this.props.history.push('/ranking')}, 3000);
+            alert ("You Win! Lead to ranking page"); 
+            setTimeout(() => {this.props.history.push('/ranking')}, 2000);
         }
     }
     componentDidMount() {

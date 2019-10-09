@@ -1,7 +1,7 @@
 import './index.css';
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter , Route } from 'react-router-dom';
+import { HashRouter , Route } from 'react-router-dom';
 import NavbarUi from "./navbarUI";
 import AllUi from "./components/allUI";
 import OngoingUi from "./components/onGoingUI";
@@ -16,7 +16,7 @@ const store = createStore(rootReducer);
 class App extends React.Component {
     render() {
         return (
-            <BrowserRouter>
+            <HashRouter>
             <div className="app-content container">
                 <h1 className="blue-text center"> Todo's </h1>
                 <NavbarUi />
@@ -25,7 +25,7 @@ class App extends React.Component {
                 <Route path="/finished" component={FinishedUi} />
                 <TypeUi />
             </div>
-            </BrowserRouter>
+            </HashRouter>
         )
     }
 }
